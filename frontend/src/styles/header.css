@@ -1,0 +1,74 @@
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.mobile-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.isActive, .noActive {
+    text-decoration: none;
+}
+.isActive {
+    font-weight: bolder;
+}
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.logo-container h2 {
+    color: white;
+}
+.sub-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 10px;
+}
+.voyant2 {
+    position: absolute;
+    padding: 1px;
+    background-color: rgb(0, 119, 255);
+    width: 2px;
+    height: 2px;
+    
+    border-radius: 50%;
+    bottom: 8px;
+    left: 0;
+    animation: vaciller 2s ease-in-out infinite;
+}
+@keyframes vaciller {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+        box-shadow: 0 0 10px #22c55e;
+    }
+    50% {
+        opacity: 0.4;
+        transform: scale(0.9);
+        box-shadow: 0 0 2px #22c55e;
+    }
+}
+.beta {
+    color: rgb(205, 95, 249);
+    background-color: rgba(176, 13, 240, 0.338);
+    border: solid 1px darkviolet;
+    padding: 2px 5px;
+    font-size: 10px;
+}
+
+@media (max-width: 576px) {
+    .logo-container h2 {
+        font-size: 18px;
+    }
+
+    .mobile-container a {
+        font-size: 12px;
+    }
+}

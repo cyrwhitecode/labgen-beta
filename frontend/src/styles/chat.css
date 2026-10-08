@@ -1,0 +1,25 @@
+.chat-main-container {
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+    min-width: 0;
+    max-width: 100%;
+}
+
+.ai-container {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.chatbot-container {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    min-height: 100vh;
+}

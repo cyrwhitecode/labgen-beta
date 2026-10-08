@@ -1,0 +1,15 @@
+header {
+    position: sticky;
+    top: 0;
+    background-color: #06070c;
+    box-shadow: 0 10px 5px rgb(1, 1, 16);
+    z-index: 1000;
+}
+
+main {
+    margin: 20px 10% 50px 10%;
+    @media (width > 1000px) {
+        margin: 20px 15% 50px 15%;
+    }
+}
+

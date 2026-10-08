@@ -1,0 +1,48 @@
+/* Thème global LabGen — importé une seule fois dans main.jsx */
+:root{
+  --bg: #06070c;
+  --card: rgba(20, 24, 45, 0.55);
+  --card-border: rgba(140, 130, 255, 0.14);
+  --card-border-hover: rgba(140, 130, 255, 0.35);
+  --violet: #8b5cf6;
+  --violet-bright: #a78bfa;
+  --cyan: #22d3ee;
+  --emerald: #34d399;
+  --amber: #fbbf24;
+  --text-primary: #f4f2ff;
+  --text-secondary: #8b8fa3;
+  --text-tertiary: #5b5f72;
+  --grad-main: linear-gradient(120deg, var(--violet) 0%, var(--cyan) 100%);
+}
+
+*{ box-sizing: border-box; margin:0; padding:0; }
+
+html, body, #root {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+body{
+  background-image:
+    radial-gradient(ellipse 900px 500px at 12% -5%, rgba(139, 92, 246, 0.16), transparent 60%),
+    radial-gradient(ellipse 700px 500px at 88% 8%, rgba(34, 211, 238, 0.10), transparent 60%),
+    radial-gradient(ellipse 1000px 700px at 50% 100%, rgba(139, 92, 246, 0.06), transparent 60%);
+  background-attachment: fixed;
+}
+
+.mono{ font-family: 'JetBrains Mono', monospace; }
+
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+
+:focus-visible{
+  outline: 2px solid var(--cyan);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce){
+  *{ animation: none !important; transition: none !important; }
+}

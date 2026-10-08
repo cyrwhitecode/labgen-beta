@@ -1,0 +1,27 @@
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    @media (witdh > 1000px) {
+        gap: 30px;
+    }
+}
+
+.history-main-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+.history0-l1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.history0-l1 code, h3 {
+    color: white;
+}
+.history0-l2 {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}

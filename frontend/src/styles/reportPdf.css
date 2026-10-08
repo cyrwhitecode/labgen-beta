@@ -1,0 +1,309 @@
+.report-pdf-render {
+    box-sizing: border-box;
+    width: 794px;
+    padding: 0;
+    background: #fff;
+    color: #20242a;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 14px;
+    line-height: 1.6;
+    word-break: normal;
+    overflow-wrap: normal;
+    hyphens: none;
+}
+
+.report-pdf-cover {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+    height: 1000px;
+    margin: 40px auto;
+    padding: 56px 28px 36px;
+    border: 3px double #92979c;
+}
+
+.report-pdf-render .report-pdf-identity {
+    position: relative;
+    z-index: auto;
+    background: transparent;
+    box-shadow: none;
+    color: #20242a;
+}
+
+.report-pdf-identity {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 180px minmax(0, 1fr);
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    min-height: 220px;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 12px;
+}
+
+.report-pdf-identity-side {
+    display: grid;
+    justify-items: center;
+    gap: 5px;
+    text-align: center;
+}
+
+.report-pdf-identity-side strong,
+.report-pdf-identity-side span:not(.report-pdf-divider) {
+    white-space: nowrap;
+}
+
+.report-pdf-identity-side span:not(.report-pdf-divider) {
+    font-style: italic;
+}
+
+.report-pdf-divider {
+    width: 36%;
+    height: 1px;
+    margin: 3px 0;
+    border-bottom: 1px dashed #20242a;
+}
+
+.report-pdf-seal {
+    display: block;
+    width: 180px;
+    height: 202px;
+    justify-self: center;
+    object-fit: contain;
+}
+
+.report-pdf-cover-title {
+    margin-top: 72px;
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.report-pdf-title-row {
+    position: relative;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    border-bottom: 1px solid #20242a;
+}
+
+.report-pdf-title-row h1,
+.report-pdf-title-row strong,
+.report-pdf-cover-title h2,
+.report-pdf-content h1,
+.report-pdf-content h2,
+.report-pdf-content h3,
+.report-pdf-content h4 {
+    break-after: avoid-page;
+    color: #182c38;
+}
+
+.report-pdf-title-row h1 {
+    margin: 0;
+    font-size: 20px;
+    line-height: 1.2;
+}
+
+.report-pdf-title-row strong {
+    position: absolute;
+    right: 0;
+    bottom: 1px;
+    font-size: 16px;
+}
+
+.report-pdf-cover-title h2 {
+    margin: 28px 0 0;
+    font-size: 16px;
+    text-decoration: underline;
+}
+
+.report-pdf-topic {
+    margin-top: 56px;
+    text-align: center;
+}
+
+.report-pdf-topic p {
+    margin: 0 0 22px;
+}
+
+.report-pdf-members {
+    width: 100%;
+    margin-top: 36px;
+    border-collapse: collapse;
+    table-layout: fixed;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 12px;
+}
+
+.report-pdf-members th,
+.report-pdf-members td {
+    height: 32px;
+    border: 1px solid #aeb5bb;
+    padding: 5px 8px;
+    overflow-wrap: anywhere;
+}
+
+.report-pdf-members th:nth-child(1) {
+    width: 7%;
+}
+
+.report-pdf-members th:nth-child(2) {
+    width: 55%;
+}
+
+.report-pdf-members th:nth-child(3) {
+    width: 38%;
+}
+
+.report-pdf-members th {
+    background: #e2e4e6;
+}
+
+.report-pdf-supervisor {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.report-pdf-supervisor span {
+    width: 220px;
+    border-bottom: 1px solid #20242a;
+}
+
+.report-pdf-date {
+    margin-top: auto;
+    padding-top: 30px;
+    text-align: center;
+}
+
+.report-pdf-render main.report-pdf-content {
+    box-sizing: border-box;
+    width: 700px;
+    margin: 0 auto;
+    background: #fff;
+    page-break-before: always;
+}
+
+.report-pdf-page {
+    box-sizing: border-box;
+    width: 700px;
+    min-height: 1000px;
+    margin: 40px auto;
+    padding: 56px 28px 36px;
+    color: #20242a;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 14px;
+    line-height: 1.55;
+    text-align: justify;
+    background: #fff;
+    border: 3px double #92979c;
+    break-inside: avoid;
+    page-break-before: always;
+}
+
+.report-pdf-page-first {
+    margin-top: 0;
+    page-break-before: auto;
+}
+
+.report-pdf-content h1,
+.report-pdf-content h2 {
+    margin: 20px 0 10px;
+    color: #182c38;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: left;
+    text-transform: uppercase;
+    text-decoration: underline;
+    break-after: avoid-page;
+    page-break-inside: avoid;
+}
+
+.report-pdf-content h1:first-child,
+.report-pdf-content h2:first-child {
+    margin-top: 0;
+}
+
+.report-pdf-content h3,
+.report-pdf-content h4 {
+    margin: 16px 0 8px;
+    color: #20242a;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: left;
+    break-after: avoid-page;
+}
+
+.report-pdf-content p,
+.report-pdf-content li,
+.report-pdf-content td,
+.report-pdf-content th {
+    overflow-wrap: normal;
+    word-break: normal;
+    hyphens: none;
+}
+
+.report-pdf-content p {
+    margin: 0 0 12px;
+    text-align: justify;
+    orphans: 3;
+    widows: 3;
+}
+
+.report-pdf-content ul,
+.report-pdf-content ol {
+    margin: 8px 0 12px;
+    padding-left: 24px;
+    break-inside: avoid;
+}
+
+.report-pdf-content table {
+    width: 100%;
+    max-width: 100%;
+    margin: 14px 0;
+    border-collapse: collapse;
+    font-size: 12px;
+    break-inside: avoid;
+}
+
+.report-pdf-content img,
+.report-pdf-content svg,
+.report-pdf-content canvas,
+.report-pdf-content pre,
+.report-pdf-content code {
+    max-width: 100%;
+}
+
+.report-pdf-content th,
+.report-pdf-content td {
+    border: 1px solid #cbd2d8;
+    padding: 7px 9px;
+    text-align: left;
+    vertical-align: top;
+}
+
+.report-pdf-content th {
+    background: #e2e4e6;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 700;
+}
+
+.report-pdf-content pre,
+.report-pdf-content blockquote,
+.report-pdf-content tr {
+    break-inside: avoid-page;
+}
+
+.report-pdf-content .katex,
+.report-pdf-content .katex-display {
+    color: #20242a;
+}
+
+.report-pdf-content .katex-display {
+    margin: 16px auto;
+    text-align: center;
+}

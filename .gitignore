@@ -1,0 +1,8 @@
+backend/.env
+backend/venv/
+backend/output/
+__pycache__/
+frontend/node_modules/
+frontend/dist/
+backend/API_KEY.txt
+backend/provide_API_KEY.txt

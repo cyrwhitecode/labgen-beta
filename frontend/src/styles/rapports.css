@@ -1,0 +1,102 @@
+.reports-page {
+    color: #f1f2f5;
+}
+
+.report-empty-state {
+    padding: 24px 0;
+    color: #c0c4cc;
+}
+
+.report-file-list {
+    display: grid;
+    gap: 10px;
+    padding: 0;
+    list-style: none;
+}
+
+.report-file-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.report-file-list li > div {
+    display: grid;
+    gap: 5px;
+}
+
+.report-file-info {
+    display: grid;
+    justify-items: start;
+    gap: 5px;
+    min-width: 0;
+}
+
+.report-file-actions button {
+    border-radius: 4px;
+    padding: 6px 9px;
+    background: transparent;
+    cursor: pointer;
+    font: inherit;
+}
+
+.report-file-actions .report-preview-toggle {
+    padding: 0;
+    border: 0;
+    color: #c7edf0;
+}
+
+.report-file-list span {
+    color: #aaaeb8;
+    font-size: 13px;
+}
+
+.report-file-list li > .report-file-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.report-file-actions a {
+    color: #c7edf0;
+    white-space: nowrap;
+}
+
+.report-file-actions .report-delete-button {
+    border: 1px solid rgba(255, 179, 173, 0.45);
+    color: #ffb3ad;
+}
+
+.report-preview {
+    margin-top: 28px;
+}
+
+.report-preview h2 {
+    margin: 0 0 12px;
+    font-size: 18px;
+}
+
+.report-preview iframe {
+    display: block;
+    width: 100%;
+    height: min(78vh, 1000px);
+    min-height: 420px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+    background: #fff;
+}
+
+@media (max-width: 600px) {
+    .report-file-list li {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .report-preview iframe {
+        height: 68vh;
+        min-height: 360px;
+    }
+}
