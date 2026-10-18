@@ -164,7 +164,7 @@ export function Context ({
             <div className='context-l4'>
                 <code>Instructions ou bjectifs du TP</code>
                 <div className='instruction-field'>
-                    <textarea onChange={handleObject} value={object} rows={5} placeholder="Decris le protocole, l'hypothese a verifier ou colle l'enonce du professeur..." />
+                    <textarea onChange={handleObject} value={object} rows={5} placeholder="Entrer l'hypothese a verifier (principe), le materiel et la methode experimentale ..." />
                     <button className='micro-btn-context'>M</button>
                 </div>
             </div>
@@ -203,6 +203,7 @@ export function ChatSpace () {
         </div>
     )
 }*/
+
 
 export function Loading () {
 

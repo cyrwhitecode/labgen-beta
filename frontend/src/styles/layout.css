@@ -1,8 +1,7 @@
 header {
     position: sticky;
     top: 0;
-    background-color: #06070c;
-    box-shadow: 0 10px 5px rgb(1, 1, 16);
+    background: linear-gradient(#030017);
     z-index: 1000;
 }
 

@@ -11,11 +11,15 @@ body {
     flex-direction: column;
     gap: 10px;
 }
+.history-card-container:hover {
+    border-color: rgb(10, 37, 210);
+}
 .container {
-    border: solid 1px rgba(51, 22, 239, 0.562);
+    border: solid 1px rgba(51, 22, 239, 0.349);
     padding: 25px 20px;
     border-radius: 15px;
     text-align: start;
+    transition: 0.3s ease-in-out;
 }
 
 /* DASHBOARD style */
@@ -65,14 +69,15 @@ body {
 .home-code {
     color: rgb(0, 183, 255);
 }
-.home-l2 {
-    margin-bottom: 15px;
+.home-l2 { 
+    margin-bottom: 25px;
 }
 .home-btn {
     height: 35px;
     border-radius: 10px;
     border: none;
     padding: 10px 20px;
+    color: white;
     background: linear-gradient(to bottom right, rgb(139, 7, 234), rgb(0, 106, 244));
     box-shadow: 0 5px 30px rgba(0, 110, 253, 0.76);
 }
@@ -126,7 +131,8 @@ body {
     height: 30px;
     border-radius: 6px;
     border: solid 1px rgb(178, 168, 168);
-    background-color: rgba(255, 255, 255, 0.319);
+    background-color: rgba(255, 255, 255, 0.319); 
+    color: white;
 }
 
 .add-tp-container {
@@ -135,11 +141,18 @@ body {
     align-items: center;
     border: dashed 1px rgb(6, 79, 237);
 }
+.add-tp-container:hover {
+    background-color: rgba(0, 0, 255, 0.041);
+}
 .add-btn {
     font-size: 20px;
     border: none;
     border-radius: 3px;
     background: linear-gradient(blue, rgb(97, 169, 247));
+    transition: 0.3s ease-in-out;
+}
+.add-btn:hover { 
+    transform: scale(1.1);
 }
 
 .physique {
@@ -276,7 +289,7 @@ body {
     bottom: 0;
     left: 0; 
     width: 100%;
-    padding: 10px 8% 15px 8%;
+    padding: 15px 8% 15px 8%;
     background-color: #030017;
     box-sizing: border-box;
     margin-top: auto;
@@ -297,7 +310,7 @@ body {
     box-sizing: border-box;
     padding: 15px 20% 10px 50px;
     border-radius: 20px;
-    box-shadow: 0 0 30px blue;
+    box-shadow: 0 0 20px blue;
     overflow-y: auto;
     line-height: 20px;
     max-height: calc(20px * 5);
@@ -320,6 +333,7 @@ body {
     padding: 3px;
     border-radius: 50%;
     border: none;
+    color: white;
 }
 .import-file {
     left: 10px;
@@ -333,7 +347,7 @@ body {
 .ai-micro {
     right: 12px;
     bottom: 10px;
-    background-color: rgb(226, 2, 2);
+    background: rgb(204, 1, 1);
 }
 .send {
     right: 42px;

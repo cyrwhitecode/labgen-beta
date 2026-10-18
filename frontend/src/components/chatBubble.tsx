@@ -1,5 +1,6 @@
 import '../styles/presentationCard.css'
 import '../styles/chatbotBubble.css'
+import React from 'react'
 import { useEffect, useRef, useState, type Dispatch, type SetStateAction } from 'react'
 import 'katex/dist/katex.min.css'
 import ReactMarkdown from 'react-markdown'
@@ -33,6 +34,7 @@ export function ChatbotBubble ({
     const chatRequestRef = useRef<AbortController | null>(null)
     const storageKey = `labgen:chat${chatContext.id}`;
     const [loadedKey, setLoadedKey] = useState<string>("");
+    const [tableauTP, setTableauTP] = useState(null);
 
     useEffect(() => {
         try {
@@ -58,6 +60,28 @@ export function ChatbotBubble ({
         }
     }, [input, setSendActive])
 
+    const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+        const file = e.target.files?.[0]
+        if (!file) return;
+
+        const formData = new FormData();
+        formData.append("fichier", file)
+
+        try {
+            const response = await fetch('http://127.0.0.1:8000/rapport/importer', {
+                method: "POST",
+                body: formData,
+            });
+
+            const data = await response.json()
+            setTableauTP(data)
+            console.log('Tableaux extraits : ', data.tableau)
+        }
+        catch (error) {
+            console.error("Erreur d'importation : ", error)
+        } 
+    }
+
     const sendMessage = async () => {
         if (!sendActive) return;
 
@@ -79,7 +103,10 @@ export function ChatbotBubble ({
                 headers: { 'content-type': 'application/json' },
                 signal: requestController.signal,
                 body: JSON.stringify({
-                    context: chatContext,
+                    context: {
+                        chatContext,
+                        tableau: tableauTP,
+                    },
                     messages: [...message, userMessage]
                         .slice(-20)
                         .map(({ sender, content }) => ({ role: sender, content }))
@@ -97,7 +124,7 @@ export function ChatbotBubble ({
                     ? data.message
                     : typeof data?.answer === 'string'
                         ? data.answer
-                        : 'Je n\'ai pas reçu de réponse valide.'
+                        : "Je n'ai pas reçu de réponse valide."
 
             const assistantMessage: messageType = { sender: 'assistant', content: reply }
             setMessage((prev: messageType[]) => [...prev, assistantMessage])
@@ -116,10 +143,14 @@ export function ChatbotBubble ({
         }
     }
 
+    
+
 
     useEffect(() => {
         endOfMessagesRef.current?.scrollIntoView({ behavior: 'smooth', block: 'end' })
     }, [message, loading])
+
+    const fileInputRef = React.useRef<HTMLInputElement>(null)
 
 
     return (
@@ -179,7 +210,11 @@ export function ChatbotBubble ({
                         rows={10}
                         placeholder="Ecrivez a LabGen ..." 
                     />
-                    <button type='button' className='import-file'>+</button>
+                    <div>
+                        <input type="file" accept='.docx' style={{ display: "none" }} onChange={handleFileUpload} ref={fileInputRef} />
+                        <button onClick={() => fileInputRef.current?.click()} type='button' className='import-file'>+</button>
+                    </div>
+                    
                     {sendActive ? <button type='button' onClick={sendMessage} className='send'>S</button> : null}
                     <button type='button' className='ai-micro'>M</button>
                 </div>

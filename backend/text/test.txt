@@ -1,0 +1,88 @@
+## Le plan incliné : étude des forces
+
+### Principe
+Un plan incliné est une surface qui forme un angle avec l’horizontale. Pour un objet posé dessus, son poids \(P = mg\) est dirigé verticalement vers le bas. Il peut être décomposé en deux composantes : l’une perpendiculaire au plan, compensée par la réaction du support, et l’autre parallèle au plan, qui tend à faire glisser l’objet. Les frottements s’opposent au mouvement. Dans cette expérience, on mesure la force nécessaire pour maintenir un chariot immobile sur une rampe.
+
+### Matériel
+- Une planche rigide servant de rampe
+- Un support réglable pour incliner la planche
+- Un chariot
+- Un dynamomètre
+- Une balance
+- Une règle ou un mètre
+- Un rapporteur ou un inclinomètre
+- Une calculatrice
+
+### Méthode et mode opératoire
+1. Peser le chariot et noter sa masse.
+2. Installer la planche sur le support et mesurer sa longueur ainsi que sa hauteur.
+3. Calculer l’angle d’inclinaison à partir de ces mesures.
+4. Accrocher le dynamomètre au chariot, dans la direction parallèle à la rampe.
+5. Placer le chariot sur le plan incliné et tirer doucement jusqu’à le maintenir immobile, sans accélération.
+6. Relever la force indiquée par le dynamomètre.
+7. Répéter la mesure pour réduire l’effet des erreurs de lecture.
+
+### Résultats 
+Les données ci-dessous sont **fictives** et illustrent un exemple de calcul ; elles ne correspondent pas à des mesures réellement effectuées.
+
+- Masse du chariot : \(m = 0{,}50\ \text{kg}\)
+- Longueur de la rampe : \(L = 1{,}00\ \text{m}\)
+- Hauteur de la rampe : \(h = 0{,}30\ \text{m}\)
+- Force mesurée au dynamomètre : \(F = 1{,}4\ \text{N}\)
+
+L’angle de la rampe vérifie \(\sin(\theta)=h/L\), donc :
+\[
+\sin(\theta)=\frac{0{,}30}{1{,}00}=0{,}30
+\quad\Rightarrow\quad
+\theta\approx17{,}5^\circ
+\]
+
+Avec \(g=9{,}81\ \text{N/kg}\), le poids du chariot vaut :
+\[
+P=mg=0{,}50\times9{,}81\approx4{,}91\ \text{N}
+\]
+
+La composante du poids parallèle à la rampe est :
+\[
+P_{\parallel}=mg\sin(\theta)
+=4{,}91\times0{,}30
+\approx1{,}47\ \text{N}
+\]
+
+La force idéale nécessaire pour maintenir le chariot immobile, sans frottement, serait donc d’environ \(1{,}47\ \text{N}\). La valeur fictive mesurée, \(1{,}4\ \text{N}\), est proche de ce résultat théorique. L’écart peut s’expliquer par les incertitudes de mesure et les frottements.
+
+### Conclusion
+Le plan incliné répartit le poids de l’objet entre une composante perpendiculaire à la surface et une composante parallèle à celle-ci. Plus la rampe est inclinée, plus la composante parallèle — et donc la force nécessaire pour retenir ou déplacer l’objet — augmente.
+
+
+# Le plan incliné — étude de cas
+
+## Principe physique
+
+Un plan incliné permet d’étudier le mouvement d’un corps soumis à la pesanteur sur une surface oblique. Pour un objet de masse \(m\) placé sur un plan d’angle \(\theta\), le poids \(P=mg\) se décompose en une composante parallèle au plan, \(mg\sin\theta\), et une composante normale, \(mg\cos\theta\). En négligeant les frottements, l’accélération le long du plan vaut donc :
+
+\[
+a=g\sin\theta,
+\]
+
+où \(g=9{,}81\ \text{m·s}^{-2}\). En présence de frottement cinétique, le modèle devient \(a=g(\sin\theta-\mu\cos\theta)\), avec \(\mu\) le coefficient de frottement.
+
+## Matériel nécessaire
+
+Plan inclinable gradué, chariot ou bloc de masse connue, balance, rapporteur ou inclinomètre, règle ou mètre, chronomètre ou dispositif de mesure vidéo et, si disponible, capteur de mouvement. Une surface de contact uniforme facilite la comparaison avec le modèle théorique.
+
+## Méthode et mode opératoire
+
+Mesurer la masse de l’objet, puis régler et relever l’angle du plan. Placer l’objet au repos à une distance mesurée du point de départ et le libérer sans poussée. Mesurer le temps nécessaire pour parcourir cette distance, en répétant chaque mesure plusieurs fois. Pour un mouvement uniformément accéléré partant du repos, l’accélération expérimentale peut être estimée par \(a_{\mathrm{exp}}=2s/t^2\), où \(s\) est la distance parcourue et \(t\) le temps mesuré. Répéter l’expérience pour plusieurs angles afin d’étudier la relation entre l’accélération et \(\sin\theta\).
+
+## Résultats simulés et interprétation
+
+**Les valeurs ci-dessous sont entièrement fictives et simulées à des fins d’illustration ; elles ne proviennent d’aucune mesure expérimentale réelle.** Supposons un parcours de \(s=1{,}00\ \text{m}\), un chariot de \(m=0{,}50\ \text{kg}\), et les temps moyens suivants :
+
+| Angle \(\theta\) | Temps simulé \(t\) | \(a_{\mathrm{exp}}=2s/t^2\) | \(g\sin\theta\) |
+|---:|---:|---:|---:|
+| \(10^\circ\) | \(1{,}12\ \text{s}\) | \(1{,}59\ \text{m·s}^{-2}\) | \(1{,}70\ \text{m·s}^{-2}\) |
+| \(20^\circ\) | \(0{,}82\ \text{s}\) | \(2{,}97\ \text{m·s}^{-2}\) | \(3{,}36\ \text{m·s}^{-2}\) |
+| \(30^\circ\) | \(0{,}68\ \text{s}\) | \(4{,}33\ \text{m·s}^{-2}\) | \(4{,}91\ \text{m·s}^{-2}\) |
+
+À \(20^\circ\), par exemple, \(a_{\mathrm{exp}}=2(1{,}00)/(0{,}82)^2\approx2{,}97\ \text{m·s}^{-2}\). Les accélérations simulées augmentent avec l’angle, conformément à la tendance prévue par \(g\sin\theta\), mais restent inférieures aux valeurs idéales. Cette différence pourrait s’expliquer, dans une expérience réelle, par les frottements, une légère poussée au départ ou l’incertitude sur le temps et l’angle. Les données fictives sont compatibles avec un modèle comportant des frottements, sans permettre d’en déterminer précisément le coefficient.

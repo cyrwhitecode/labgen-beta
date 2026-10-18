@@ -9,7 +9,7 @@
 :root {
   --text: #6b6375;
   --text-h: #08060d;
-  --bg: linear-gradient(#030017f2);
+  --bg: linear-gradient(#060125);
   --border: #e5e4e7;
   --code-bg: #f4f3ec;
   --accent: #aa3bff;
@@ -48,6 +48,7 @@
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 body {
@@ -62,7 +63,7 @@ h3 {
 }
 
 h1 {
-  font-size: 46px;
+  font-size: 40px;
   letter-spacing: -1.68px;
   margin: 32px 0;
   line-height: 118%;
@@ -71,7 +72,7 @@ h1 {
   }
 }
 h2 {
-  font-size: 36px;
+  font-size: 30px;
   line-height: 118%;
   letter-spacing: -1.24px;
   margin: 0 0 8px;

@@ -8,6 +8,7 @@ from fastapi.middleware.cors import CORSMiddleware
 #from pydantic import BaseModel
 #import re
 from routes import chat
+from routes import rapports
 
 
 
@@ -44,78 +45,10 @@ client = OpenAI(
 )
 
 app.include_router(chat.router)
+app.include_router(rapports.router)
 
-'''class ChatMessage(BaseModel):
-    role: Literal["user", "assistant"]
-    content: str
 
-class ChatRequest(BaseModel):
-    messages: list[ChatMessage]
-    context: dict | None = None
-'''
 # Route principale appelee par le frontend
 @app.get("/")
 async def root():
     return {"status": "API operationnelle"}    
-
-'''def normilization(texte: str) -> str:
-    texte = re.sub(
-       r"\\\[(.*?)\\\]",
-       lambda m: "$$" + m.group(1) + "$$", 
-       texte,
-       flags=re.DOTALL,
-    )
-
-    texte = re.sub(
-        r"\\\((.*?)\\\)",
-        lambda m: "$" + m.group(1).strip() + "$", 
-        texte,
-        flags=re.DOTALL,
-    )
-    return texte
-
-@app.post("/chat") 
-async def chat_with_groq(payload: ChatRequest):
-    try:
-        system_prompt = r"""Tu es LabGen, un assistant IA spécialisé dans la conception de rapports de TP et l'exploration scientifique. 
-            Ton créateur est White Cyr, un étudiant camerounais.
-            Tu as un bon sens de la conversation, tu ecoute et tu reponds poliment  
-
-            Reponds en texte normal et en Markdown.
-
-            Regles pour la mise en forme des formules mathematiques et physiques:
-            - Utilise du LaTeX uniquement pour une vraie formule mathematique ou physique, jamais pour du texte ordinaire.
-            - Formule dans une phrase: $...$ . 
-            - Formule seule sur sa ligne: mets $$ seul sur sa propre ligne, puis la formule, puis $$ seul sur sa propre ligne, avec une ligne vide avant et après: $$...$$
-            - N'utilise jamais \[\], \(\), \text{} ni \quad pour du texte.
-            
-            Exemple de mise en forme attendue:
-
-            La vitesse vaut $v = \frac{d}{t}$ dans ce cas.
-
-            $$
-            v = \frac{d}{t}
-            $$
-            
-            Voila, tu es prêt à répondre aux questions de l'utilisateur en respectant ces règles de mise en forme."""
-        
-        if payload.context:
-            system_prompt += f"\n\nContexte fourni par l'utilisateur: {json.dumps(payload.context, ensure_ascii=False)}"
-            print("payload.context:", payload.context)
-
-        response = client.responses.create(
-                input=[
-                    {"role": "system", "content": system_prompt},
-                    *[message.model_dump() for message in payload.messages[-20:]]
-                ],
-                model="openai/gpt-oss-20b",
-                #stream=True,
-            )
-        texte_brute = response.output_text
-        texte_normalized = normilization(texte_brute)
-        #print("Réponse de Groq:", texte_normalized.count("$$"))
-        return {"reply": texte_normalized}
-    
-    except Exception as e:
-        print(repr(e))
-        raise HTTPException(status_code=500, detail=str(e))'''
